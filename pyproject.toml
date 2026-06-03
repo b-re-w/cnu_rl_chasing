@@ -1,0 +1,32 @@
+[project]
+name = "cnu-rl-chasing"
+version = "0.1.0"
+description = "2026 CNU Robot AI Final Term Project"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "gymnasium[mujoco]>=1.0",
+    "imageio>=2.37.3",
+    "imageio-ffmpeg>=0.6.0",
+    "mujoco>=3.1",
+    "pettingzoo>=1.24",
+    "rich>=15.0.0",
+    "stable-baselines3>=2.3",
+    "tensorboard>=2.20.0",
+    "torch>=2.7.0",
+    "tqdm>=4.67.3",
+]
+
+[tool.uv.sources]
+torch = [ { index = "torch-cu128" } ]
+
+[[tool.uv.index]]
+name = "torch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+    "ruff>=0.15.15",
+]
